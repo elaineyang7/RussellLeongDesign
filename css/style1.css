@@ -11,6 +11,7 @@ html, body {
 
 a {
   text-decoration: none;
+  color: #000000;
 }
 
 li {
@@ -144,12 +145,16 @@ nav .sidenav {
   letter-spacing: 3.02px;
 }
 
+.sidenav ul li:hover a {
+  color: #FFC84E;
+}
+
 /***********************/
 /* Main                */
 /***********************/
 main {
   position: absolute;
-  width: calc(100vw - 120px);
+  width: calc(100% - 120px);
 	/*height: calc(100vh - 108px);*/
 	top: 108px;
 	left: 120px;
@@ -231,7 +236,7 @@ main {
   font-family: SFProText-Regular;
 }
 
-.see-more {
+.see-more p {
   text-align: center;
   padding-top: 150px;
 }
@@ -325,6 +330,228 @@ main {
 }
 
 /***********************/
+/* Contact             */
+/***********************/
+.contact {
+  position: relative;
+  height: 1800px;
+  background-color: #090909;
+  color: #fff;
+  /*display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;*/
+}
+
+.container-contact {
+  width: calc(100% - 200px);
+  height: 1560px;
+  position: absolute;
+  top: 240px;
+  left: 100px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.contactForm,
+.contactInfo {
+  width: calc(50% - 10px);
+  height: 50%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  align-items: flex-start;
+}
+
+.contactForm {
+  width: calc(65% - 10px);
+}
+
+.contactInfo {
+  width: calc(35% - 10px);
+}
+
+.contactForm h2 {
+  font-family: Arial-Black;
+  font-size: 60px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 60px;
+  margin: 0;
+}
+
+.contactForm p {
+  font-family: SFProText-Thin;
+  font-size: 24px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 28px;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+
+form {
+  margin-top: 74px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputBox {
+  position: relative;
+  width: 80%;
+  font-family: SFProText-Thin;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+
+.inputBox input,
+.inputBox textarea {
+  width: 100%;
+  padding: 5px 10px;;
+  font-size: 12px;
+  margin: 20px 0;
+  margin-bottom: 78px;
+  border: 1px solid #2A2A2A;
+  background-color: #090909;
+  outline: none;
+  resize: none;
+  height: 80px;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.inputBox textarea {
+  height: 252px;
+  margin-bottom: 80px;
+}
+
+.submit {
+  width: 260px;
+  height: 88px;
+  background-color: #F2BB12;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: .3s linear;
+  border-radius: 4px;
+  font-family: SFProText-Medium;
+  font-size: 28px;
+  color: #343434;
+  letter-spacing: 0.3px;
+}
+
+.contactBox {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 268px 30px;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+.text p {
+  padding-bottom: 24px;
+  margin: 0;
+  font-family: SFProText-Thin;
+  font-size: 20px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+}
+
+.text span {
+  padding-bottom: 105px;
+  font-family: SFProText-Regular;
+  font-size: 24px;
+  color: #F2BB12;
+  letter-spacing: 0;
+}
+.sci {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.sci ul {
+  padding-left: 0;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding-left: 0;
+}
+
+.sci ul li {
+  padding-right: 44px;
+  width: 32px;
+  height: 32px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 105px;
+  background-color: #ffff;
+  color: #000;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 99;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+  font-size: 10px;
+
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.tooltip .exitLinkedIn {
+  background-color: #ffD70f;
+  color: #000;
+}
+
+.tooltip .exitLinkedIn::after {
+  border-color: transparent transparent #ffD70f transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltip .img-hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 32px;
+  height: 32px;
+}
+
+.tooltip:hover .img-hover {
+    display: inline;
+}
+
+/***********************/
 /* Footer              */
 /***********************/
 /*footer {
@@ -380,4 +607,109 @@ footer .footer-row .copyright p {
 footer .footer-row .copyright .copyright-design {
   position: absolute;
   right: 40px;
+}*/
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  transition: 1.0s;
+  z-index: 1;
+}
+
+.overlay a {
+  padding: 10px;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 35px;
+  font-size: 70px;
+  font-weight: lighter;
+  color: #666;
+  z-index: 999;
+}
+
+.overlay-content {
+  position: relative;
+  top: 0;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  text-align: center;
+  z-index: 998;
+}
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 70%;
+  text-align: center;
+  background-color: #000;
+  padding: 30% 0;
+}
+
+.overlay .overlay-content .menu-item a {
+  color: #fff;
+  padding: 20px 0;
+  font-size: 50px;
+}
+
+.overlay .overlay-content .menu-item a:hover {
+  color: #ffD70f;
+}
+
+.overlay .overlay-content .menu-contact {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  margin-left: 60%;
+  background-color: #FFC84E;
+  padding: 40% 5%;
+  align-items: center;
+}
+
+.menu-contact p {
+  color: #666;
+}
+
+.tooltip a {
+  padding: 0;
+}
+
+/*
+.overlay .overlay-content .menu-contact .sci {
+  position: relative;
+  display: flex;
+}
+
+.overlay .overlay-content .menu-contact .sci ul {
+  display: table;
+  margin: 0 auto;
+}
+
+.overlay .overlay-content .munu-contact .sci li {
+  margin: 0 15px;
+  display:inline;
+}
+
+.overlay .overlay-content .menu-contact .sci li .tooltip .tooltiptext {
+  color: #000;
+  font-size: 10px;
+}
+
+.overlay .overlay-content .menu-contact .sci li .tooltip a {
+  padding: 0;
 }*/
