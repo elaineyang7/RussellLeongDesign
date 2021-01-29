@@ -1,156 +1,86 @@
-/*************************/
-/* Header                */
-/*************************/
+/**
+/* About Introduction
+**/
 
-.header {
-  top: 0;
-  left: 0;
-  height: var(--height-homepage-russell-logo);
-  width: 100%;
-  max-width: 1920px;
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  overflow-x: hidden;
-  background-color: var(--color-white-01);
-  z-index: 1;
-}
-
-/* Logo */
-.gear-logo {
-  width: var(--width-left-side-nav);
-  height: var(--height-homepage-russell-logo);
-  position: relative;
-  background-color: var(--color-black-09);
-}
-
-.gear-logo img {
-  width: var(--size-gear-logo);
-  height: var(--size-gear-logo);
-  margin: 20px 28.3px 0 28.3px; /* Sara annotation:: 28px 28.3px 0 28.3px; */
-}
-
-/* Back to home */
-.go-back {
-  width: calc(100% - var(--width-left-side-nav));
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-}
-
-.go-back a {
-  padding-top: 15px;
-}
-
-.go-back a img {
-  width: var(--size-gear-logo);
-  height: var(--size-gear-logo);
-  position: relative;
-  top: 0; /* Sara annotation: 60px; */
-  left: 44px;
-  transform: rotate(180deg);
-  border: 1px solid var(--color-black-01);
-  border-radius: 50%;
-}
-
-.go-back p {
-  font-family: var(--font-sfbold);
-  font-size: 20px;
-  color: var(--color-black-01);
-  letter-spacing: 0;
-  position: relative;
-  padding-top: 35px;
-  left: calc(44px + 20px);
-}
-
-/* Overlay Menu Btn*/
-.overlay-menu {
-  position: relative;
-  z-index: 999;
-  right: 0;
-}
-
-.openbtn {
-  width: 72px;
-  height: 49px;
-  cursor: pointer;
-  position: absolute;
-  top: var(--size-overlay-btn-position);
-  right: var(--size-overlay-btn-position);
-}
-
-/*************************/
-/* About Introduction    */
-/*************************/
-
-.about-introduction {
+.about__introduction {
   width: 100%;
   height: 1019px;
   position: relative;
   background-color: var(--color-white-02);
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
 }
 
-.content-about-introduction {
-  width: 50%; /* Sara annotation: 909px; */
+.introduction__content {
+  width: 909px;
   height: 965px;
   position: relative;
-  top: 170px; /* Sara annotation: 272.5px; */
-  left: 188px;
-  margin-bottom: 309px;
+  padding-top: 272.5px;
+  padding-left: 188px;
   color: var(--color-black-12);
 }
 
-.about-title {
+.introduction__title {
   width: 171px;
   height: 64px;
-  background-color: var(--color-yellow-about);
+  background-color: var(--color-yellow-04);
   text-align: center;
 }
 
-.about-title h1 {
+.introduction__title h1 {
   font-size: 40px;
   letter-spacing: 0;
-  line-height: 64px; /* Sara annotation: 96px; */
+  line-height: 96px;
+  color: var(--color-black-08);
+  position: relative;
+  top: -19px;
+  /*left: 18px;*/
 }
 
-.content-about-introduction h2 {
+.introduction__content h2 {
   font-size: 40px;
   letter-spacing: 0;
-  margin-top: 56px; /* Sara annotation: 76px; */
+  margin-top: 76px;
   margin-bottom: 32px;
+  color: var(--color-black-08);
+  line-height: 50px;
 }
 
-.content-about-introduction p {
-  font-family: var(--fonr-sflight);
+.introduction__content p {
+  font-family: var(--font-sflight);
   font-size: 24px;
   letter-spacing: 0;
+  color: var(--color-black-08);
 }
 
-.about-egg {
-  width: 890px; /* Sara annotation: 590px; */
+.about__egg {
+  width: 447px;
   height: 596px;
-  position: absolute;
-  top: 156.5px;
-  right: -430px;
+  position: relative;
+  padding-top: 156.5px;
+  padding-left: 256px;
+  overflow: hidden;
 }
 
-.about-egg img {
+.about__egg img {
   width: 100%;
   height: 100%;
   opacity: 0.32;
+  object-fit: cover;
+  overflow: hidden;
 }
 
-/*************************/
-/* About Location        */
-/*************************/
+/**
+/* About Location
+**/
 
-.about-location {
+.about__location {
   position: relative;
   height: var(--height-about-location);
 }
 
-.content-location {
+.location__content {
   width: 100%;
   height: 100%;
   background-image: url("../images/about/location.png");
@@ -159,10 +89,10 @@
   background-repeat: no-repeat;
 }
 
-.content-location p {
+.location__content p {
   width: 399px;
   height: 42px;
-  background-color: var(--color-black-04);
+  background-color: var(--color-black-08);
   font-family: ArialMT;
   font-size: 20px;
   letter-spacing: 0;
@@ -173,248 +103,255 @@
   margin: 0 auto;
 }
 
-/*************************/
-/* About Clients         */
-/*************************/
+/**
+/* About Clients
+**/
 
-.about-clients {
+.about__clients {
   position: relative;
   height: var(--height-about-clients);
-  background-color: var(--color-black-14);
+  background-color: var(--color-white-03);
 }
 
-.about-section-title {
+.about__section-title {
   font-size: 40px;
-  color: var(--color-black-06);
+  color: var(--color-black-10);
   letter-spacing: 0;
   text-align: center;
   padding-top: 180px;
   padding-bottom: 70px;
 }
 
-.about-clients p {
-  width: 80%;/* Sara annotation: 1153px; */
-  /*height: 110px;*/
-  color: var(--color-black-06);
+.about__clients p {
+  width: 1000px; /* Sara annotation: 1153px; */
+  height: 110px;
+  color: var(--color-black-10);
   margin: 0 auto;
-  font-family: var(--fonr-sflight);
+  font-family: var(--font-sflight);
   font-size: 26px;
   letter-spacing: 0;
 }
 
-.about-clients p span {
+.about__clients p span {
   font-family: var(--font-sfbold);
   font-size: 26px;
-  color: var(--color-black-13);
+  color: var(--color-black-05);
   letter-spacing: 0;
   line-height: 31px;
   position: relative;
   z-index: 1;
 }
 
-.about-clients p span:before {
+.about__clients p span:before {
   content: "";
   width: 100%;
   height: 10px;
   position: absolute;
   bottom: 0;
-  background-color: var(--color-yellow-about);
+  background-color: var(--color-yellow-04);
   z-index: -1;
 }
 
-.about-clients-img {
-  width: 85%; /* Sara annotation: 1286px; */
-  height: auto; /* Sara annotation: 249px; */
+.client__img {
+  width: 1286px;
+  height: 249px;
   position: relative;
   margin: 0 auto;
   margin-top: 110px;
 }
 
-.about-clients-img img {
+.client__img img {
   width: 100%;
   height: 100%;
 }
 
 .nonprofit {
   height: var(--height-about-clients-nonprofit);
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  top: 189px;
   background-color: var(--color-white-01);
 }
 
-.nonprofit p {
+.about__clients .nonprofit p {
   width: 672px;
   height: 37px;
   padding-top: 178px;
-  padding-bottom: 131px;
-  font-family: var(--fonr-sflight);
-  font-size: 26px;
-  color: var(--color-black-06);
-  letter-spacing: 0;
-  text-align: center;
+  /*padding-bottom: 131px;*/
 }
 
-.nonprofit p span {
-  font-family: var(--font-sfbold);
-  font-size: 26px;
-  color: var(--color-black-13);
-  letter-spacing: 0;
-  line-height: 31px;
+.nonprofit .clients__img {
+  width: 1547px;
+  height: 266px;
   position: relative;
-}
-
-.nonprofit p span:before {
-  content: "";
-  width: 100%;
-  height: 10px;
-  position: absolute;
-  bottom: 0;
-  background-color: var(--color-yellow-about);
-  z-index: －1;
-}
-
-.nonprofit .about-clients-img {
   margin: 0 auto;
 }
 
-/*************************/
-/* About Others          */
-/*************************/
+/**
+/* About Others
+**/
 
-.about-others {
+.about__others {
   position: relative;
   height: 3527px;
-  background-color: var(--color-black-14); 
+  background-color: var(--color-white-03);
 }
 
-.about-others .about-section-title {
+.about__others .about__section-title {
   padding-top: 236px;
-  padding-bottom: 207px;
+  padding-bottom: 218px;
+  color: #333333;
 }
 
-.about-others h4 {
+.about__others h4 {
   font-family: var(--font-sfbold);
   font-size: 24px;
   letter-spacing: 0;
 }
 
-.about-others p {
+.about__others p {
   font-family: var(--font-sfthin);
   font-size: 24px;
   letter-spacing: 0;
 }
 
-.about-others-media {
+.others__media {
   position: relative;
-  height: calc(320px + 462px); /* 1102px; */
+  height: 1102px;
   display: flex;
   flex-direction: row;
 }
 
-.about-others-media-content {
+.media__content {
   width: 475px;
-  height: 471px;
-  position: absolute;
-  top: 0;
-  left: 100px; /* Sara annotation: 234px; */
+  height: 529px;
+  position: relative;
+  padding-left: var(--width-about-media-content);
 }
 
-.about-others-media-content h4 {
-  color: var(--color-black-06);
+.media__content h4 {
+  font-family: var(--font-sfbold);
+  font-size: 24px;
+  color: var(--color-black-10);
+  letter-spacing: 0;
   margin-bottom: 29px;
 }
 
-.about-others-media-content p {
-  color: var(--color-black-06);
+.media__content p {
+  font-family: var(--font-sfthin);
+  font-size: 24px;
+  color: var(--color-black-10);
+  letter-spacing: 0;
 }
 
-.about-others-media-img {
-  width: 490px; /* Sara annotation: 960px; */
-  height: 320px; /* Sara annotation: 640px; */
-  position: absolute;
-  top: 0;
-  right: 45px;
+.media__img {
+  width: 960px;
+  height: 640px;
+  position: relative;
+  top: -10px;
+  left: 206px;
 }
 
-.about-others-media-img img {
+.media__img img {
   width: 100%;
   height: 100%;
 }
 
-.about-others-collection {
+.others__collection {
   position: relative;
   height: 717px;
   background-color: var(--color-black-15);
+  display: flex;
+  flex-direction: row;
 }
 
-.about-others-collection-img {
+.collection__img {
   width: 734px; 
   height: 954px; 
-  position: absolute;
+  position: relative;
   top: -127px;
-  left: 161px;
+  left: var(--width-about-media-collection);
 }
 
-.about-others-collection-img img {
+.collection__img img {
   width: 100%;
   height: 100%;
 }
 
-.about-others-collection-content {
+.collection__content {
   width: 467px;
-  position: absolute;
+  position: relative;
   top: 268px;
-  right: 151px; /* Sara annotation: 251px; */
+  left: 287px;
 }
 
-.about-others-collection-content h4 {
+.collection__content h4 {
+  font-family: var(--font-sfbold);
+  font-size: 24px;
+  letter-spacing: 0;
   padding-bottom: 31px;
 }
 
-.about-others-collection-content p {
-  font-family: var(--fonr-sflight);
+.collection__content p {
+  font-family: var(--font-sflight);
   font-size: 20px;
   line-height: 26px;
+  letter-spacing: 0;
 }
 
-.about-others-teaching {
+.others__teaching {
   position: relative;
+  height: 1217px;
+  display: flex;
+  flex-direction: row;
 }
 
-.about-others-teaching-content {
+.teaching__content {
   width: 560px;
-  position: absolute;
-  top: 494px;
-  left: 257px;
+  position: relative;
+  padding-top: 494px;
+  padding-left: var(--width-about-media-teaching);
 }
 
-.about-others-teaching-content h4 {
+.teaching__content h4 {
+  font-family: var(--font-sfbold);
+  font-size: 24px;
+  color: var(--color-black-10);
+  letter-spacing: 0;
   padding-bottom: 23px;
-  color: var(--color-black-06);
 }
 
-.about-others-teaching-content p {
-  font-family: var(--fonr-sflight);
+.teaching__content p {
+  font-family: var(--font-sflight);
   font-size: 20px;
   line-height: 26px;
   color: var(--color-black-06);
 }
 
-.about-others-teaching-img {
+.teaching__img {
   width: 960px;
   height: 640px;
-  position: absolute;
+  position: relative;
   top: 272px;
-  right: 45px;
+  left: 98px;
 }
 
-.about-others-teaching-img img {
+.teaching__img img {
   width: 100%;
   height: 100%;
 }
 
 
-.about-hobby {
+/** 
+* About Hobby
+**/
+
+.about__hobby {
   position: relative;
+  width: 100%;
   height: 1080px;
+}
+
+.about__hobby img {
+  width: 100%;
+  height: 100%;
 }

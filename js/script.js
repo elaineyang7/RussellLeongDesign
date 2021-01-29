@@ -6,64 +6,22 @@ function closeNav() {
   document.getElementById("overlay").style.width = "0%";
 }
 
-
-
-$(document).ready(function() {
-
-  /* Contact */
-  /*https://formspree.io/*/
-  $('.submit').click(function (event) {
-    console.log('Click')
-
-    var companyName = $('.companyname').val()
-    var yourName = $('.yourname').val()
-    var email = $('.email').val()
-    var project = $('.project').val()
-    var statusElm = $('.status')
-
-    statusElm.empty()
-
-    if(companyName.length >= 2) {
-      statusElm.append("<div>companyName Valid</div>")
-    } else {
-      event.preventDefault()
-      statusElm.append("<div>companyName Not Valid</div>")
-    }
-
-    if(yourName.length >= 2) {
-      statusElm.append("<div>yourName Valid</div>")
-    } else {
-      event.preventDefault()
-      statusElm.append("<div>yourName Not Valid</div>")
-    }
-
-    if(email.length >= 5 && email.includes('@') && email.includes('.')) {
-      statusElm.append("<div>Email Valid</div>")
-    } else {
-      event.preventDefault()
-      statusElm.append("<div>Email Not Valid</div>")
-    }
-
-    if(project.length >= 2) {
-      statusElm.append("<div>project Valid</div>")
-    } else {
-      event.preventDefault()
-      statusElm.append("<div>project Not Valid</div>")
-    }
-
-  })
-});
-
-
 function changeDot() {
   const scrollValue = $(window).scrollTop();
-  const heightSec2 = $('.about').offset().top;
-  const heightSec3 = $('.logo').offset().top;
-  const heightSec4 = $('.print').offset().top;
-  const heightSec5 = $('.vi').offset().top;
-  const heightSec6 = $('.mail').offset().top;
-  const heightSec7 = $('.contact').offset().top;
-  const heightSec8= $('.footer').offset().top;
+  const heightSec2 = $('#section2').offset().top;
+  const heightSec3 = $('#section3').offset().top;
+  const heightSec4 = $('#section4').offset().top;
+  const heightSec5 = $('#section5').offset().top;
+  const heightSec6 = $('#section6').offset().top;
+  const heightSec7 = $('#section7').offset().top;
+  const heightSec8= $('#section8').offset().top;
+  //const heightSec2 = $('.about').offset().top;
+  //const heightSec3 = $('.logo').offset().top;
+  //const heightSec4 = $('.print').offset().top;
+  //const heightSec5 = $('.vi').offset().top;
+  //const heightSec6 = $('.mail').offset().top;
+  //const heightSec7 = $('.contact').offset().top;
+  //const heightSec8= $('.footer').offset().top;
 
   if (scrollValue < heightSec2) {
       $('aside li').not('.bar1').removeClass('active');
