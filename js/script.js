@@ -15,13 +15,6 @@ function changeDot() {
   const heightSec6 = $('#section6').offset().top;
   const heightSec7 = $('#section7').offset().top;
   const heightSec8= $('#section8').offset().top;
-  //const heightSec2 = $('.about').offset().top;
-  //const heightSec3 = $('.logo').offset().top;
-  //const heightSec4 = $('.print').offset().top;
-  //const heightSec5 = $('.vi').offset().top;
-  //const heightSec6 = $('.mail').offset().top;
-  //const heightSec7 = $('.contact').offset().top;
-  //const heightSec8= $('.footer').offset().top;
 
   if (scrollValue < heightSec2) {
       $('aside li').not('.bar1').removeClass('active');
