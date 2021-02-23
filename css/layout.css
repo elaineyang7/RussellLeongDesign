@@ -4,10 +4,7 @@
 
 .layout {
   width: 100vw;
-  height: 56.25vw;
-  display: grid;
-  grid-template-rows: 108px 90%;
-  grid-template-columns: 100px auto;
+  height: 100vh;
 }
 
 
@@ -16,11 +13,7 @@
 **/
 
 nav {
-  background: var(--color-black-06);
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  background: var(--color-black3-leftnav);
   width: var(--width-left-nav);
   height: var(--height-section-100vh);
   top: var(--height-header);
@@ -28,14 +21,15 @@ nav {
 }
 
 .nav__left {
-  width: 100%;
+  width: var(--height-section-100vh);
   height: var(--width-left-nav);
   position: fixed;
   top: var(--height-header);
   left: 0;
+  margin: 0 auto;
   overflow-y: hidden;
-  overflow-x: auto;
-  background: var(--color-black-06);
+  overflow-x: hidden;
+  background: var(--color-black3-leftnav);
   -webkit-transform-origin: left top;
   -webkit-transform: rotate(-90deg)translateX(-100%);
   -moz-transform-origin: left top;
@@ -46,33 +40,123 @@ nav {
 }
 
 .nav__left ul {
+  width: 526.96px;
+  height: 21px;
   position: relative;
   top: 38.5px;
-  margin: 0 auto;
-  margin-right: 163.2px;
+  margin: 0 calc((var(--height-section-100vh) - 526.96px) / 2);
   padding: 0;
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 .nav__left ul li {
-  margin-left: 111.6px;
+  padding-left: 111.6px;
   position: relative;
   display: inline;
   float: right;
   height: 100%;
 }
 
+.nav__left ul li.nav__left-noPadding {
+  padding-left: 0;
+}
+
 .nav__left ul li a {
+  width: 21px;
   font-family: var(--font-secondary);
   font-size: 18px;
-  color: var(--color-white-01);
+  color: var(--color-white);
   letter-spacing: 3.02px;
   text-transform: uppercase;
   line-height: 21px;
-  width: 21px;
 }
 
 .nav__left ul li:hover a {
-  color: var(--color-yellow-01);
+  color: var(--color-yellow1-main);
+}
+
+@media (max-width: 1440px) {
+  nav {
+    width: var(--width-left-nav-1440);
+    height: var(--height-section-100vh-1440);
+    top: var(--height-header-1440);
+  }
+  
+  .nav__left {
+    width: var(--height-section-100vh-1440);
+    height: var(--width-left-nav-1440);
+    top: var(--height-header-1440);
+  }
+  
+  .nav__left ul {
+    margin: 0 calc((var(--height-section-100vh-1440) - 526.96px) / 2);
+    top: 27.5px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav__left ul {
+    width: 483.76px;
+    margin: 0 calc((var(--height-section-100vh) - 483.76px) / 2);
+  }
+
+  .nav__left ul li {
+    padding-left: 90px;
+  }
+}
+
+
+/**
+* Right Side Navigation
+**/
+
+aside {
+  width: 13px;
+  height: 540px;
+  position: fixed;
+  top: calc(50vh - 270px);
+  right: 52px;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+aside ul li {
+  height: 50px;
+  margin-bottom: 5px;
+  cursor: default;
+}
+
+aside ul li p {
+  visibility: hidden;
+}
+
+.active {
+  width: 3px;
+  height: 50px;
+  background-color: var(--color-black-09);
+}
+
+
+@media (max-width: 1440px) {
+  aside {
+    width: 8px;
+    height: 345px;
+    position: fixed;
+    top: calc(50vh - 172.5px);
+    right: 32px;
+  }
+  
+  aside ul li {
+    height: 32px;
+  }
+
+  .active {
+    height: 32px;
+  }
 }
 
 
@@ -82,16 +166,12 @@ nav {
 
 /* Homepage */
 .header {
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 3;
   width: 100vw;
-  height: 108px;
+  height: var(--height-header);
   position: fixed;
   display: flex;
   flex-direction: row;
-  overflow-x: hidden;
+  overflow: hidden;
   z-index: 5;
 }
 
@@ -108,7 +188,7 @@ nav {
 
 .header__russell-logo h1 {
   font-size: 28px;
-  color: var(--color-black-07);
+  color: var(--color-black4-text);
   display: flex;
   flex-direction: row;
   letter-spacing: 0;
@@ -135,31 +215,28 @@ nav {
   position: relative;
   top: var(--size-overlay-btn-position);
   right: var(--size-overlay-btn-position);
+  fill: var(--color-black4-text);
 }
 
 /* About, Logo, VI, Print Header */
 .header__logo {
-  background-color: var(--color-yellow-10) !important;
-}
-
-.header__vi {
-  background-color: var(--color-white-05) !important;
+  background-color: var(--color-yellow1-main) !important;
 }
 
 .header__print {
-  background-color: var(--color-black-18) !important;
+  background-color: var(--color-gray2-socialmedia) !important;
+}
+
+.header__vi {
+  background-color: var(--color-white) !important;
 }
 
 /* Logo */
 .gear-logo {
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
   position: relative;
-  width: 100px;
-  height: 108px;
-  background-color: var(--color-black-06);
+  width: var(--width-left-nav);
+  height: var(--height-header);
+  background-color: var(--color-black3-leftnav);
 }
 
 .gear-logo img {
@@ -191,7 +268,7 @@ nav {
 .go-back p {
   font-family: var(--font-sfbold);
   font-size: 20px;
-  color: var(--color-black-01);
+  color: var(--color-black4-text);
   letter-spacing: 0;
   position: relative;
   padding-top: 60px;
@@ -208,7 +285,7 @@ nav {
 .portfolio__nav a {
   font-family: var(--font-sfbold);
   font-size: 20px;
-  color: var(--color-black-01);
+  color: var( --color-black3-leftnav);
   letter-spacing: 0;
   line-height: 40px;
   margin-right: 57px;
@@ -216,7 +293,47 @@ nav {
 
 .current__page {
   padding-bottom: 10px;
-  border-bottom: 4px solid var(--color-black-10);
+  border-bottom: 4px solid var(--color-black4-text);
+}
+
+
+@media (max-width: 1440px) {
+  .header {
+    height: var(--height-header-1440);
+  }
+  
+  /* Logo */
+  .header__russell-logo {
+    width: var(--width-homepage-russell-logo-1440);
+    height: var(--height-header-1440);
+  }
+  
+  .header__russell-logo img {
+    width: var(--width-homepage-russell-logo-1440);
+    height: 100%;
+  }
+
+  .openbtn {
+    top: 36px;
+    right: 36px;
+  }
+
+  .gear-logo {
+    width: var(--width-left-nav-1440);
+    height: var(--height-header-1440);
+  }
+
+  .go-back a img {
+    top: 12px;
+  }
+  
+  .go-back p {
+    padding-top: 42px;
+  }
+
+  .portfolio__nav {
+    top: 36px;
+  }
 }
 
 
@@ -225,10 +342,21 @@ nav {
 **/
 
 main {
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  width: var(--width-main-100vw);
+  height: var(--height-section-100vh);
+  position: absolute;
+  top: var(--height-header);
+  left: var(--width-left-nav);
+  margin: 0;
+}
+
+@media (max-width: 1440px) {
+  main {
+    width: var(--width-main-100vw-1440);
+    height: var(--height-section-100vh-1440);
+    top: var(--height-header-1440);
+    left: var(--width-left-nav-1440);
+  }
 }
 
 
@@ -240,17 +368,17 @@ main {
   position: relative;
   width: 100%;
   height: 31.04vw;
-  background-color: var(--color-black-03);
+  background-color: var(--color-black2-footerbg);
   display: grid;
   grid-template-rows: 20.47% 57.38% 8.56% 3.19% 10.4%;
   /*grid-template-columns: 7.69% 30.4% 22.6% 20.79% 10.11% 7.69%;*/
-  grid-template-columns: 7.69% 27% 22.6% 20.79% auto 7.69%;
+  grid-template-columns: 7.69% auto 22.6% 20.79% 184px 7.69%;
 }
 
 @media (max-width: 1200px) {
   .footer {
-    height: 40vw;
-    grid-template-columns: 7.69% 28% 20% 20% auto 7.69%;
+    height: 45vw;
+    grid-template-columns: 7.69% auto 20% 20% 184px 7.69%;
   }
 
   .links h3 {
@@ -267,7 +395,7 @@ main {
   grid-row-end: 3;
   grid-column-start: 2;
   grid-column-end: 3;
-  border-bottom: 1px solid var(--color-black-12);
+  border-bottom: 1px solid var(--color-gray1-footertext);
 }
 
 .link__work {
@@ -275,7 +403,7 @@ main {
   grid-row-end: 3;
   grid-column-start: 3;
   grid-column-end: 4;
-  border-bottom: 1px solid var(--color-black-12);
+  border-bottom: 1px solid var(--color-gray1-footertext);
 }
 
 .link__social {
@@ -283,7 +411,7 @@ main {
   grid-row-end: 3;
   grid-column-start: 4;
   grid-column-end: 5;
-  border-bottom: 1px solid var(--color-black-12);
+  border-bottom: 1px solid var(--color-gray1-footertext);
 }
 
 .link__contact {
@@ -291,7 +419,7 @@ main {
   grid-row-end: 3;
   grid-column-start: 5;
   grid-column-end: 6;
-  border-bottom: 1px solid var(--color-black-12);
+  border-bottom: 1px solid var(--color-gray1-footertext);
 }
 
 .links h3 {
@@ -300,7 +428,7 @@ main {
   letter-spacing: 0;
   font-weight: 700;
   margin-bottom: 40px;
-  color: var(--color-black-19);
+  color: var(--color-gray1-footertext);
 }
 
 .links ul li {
@@ -312,7 +440,7 @@ main {
   font-size: 16px;
   letter-spacing: 0;
   font-weight: 400;
-  color: var(--color-black-19);
+  color: var(--color-gray1-footertext);
 }
 
 .copyright {
@@ -325,7 +453,7 @@ main {
   justify-content: space-between;
   font-family: var(--font-sfthin);
   font-size: 16px;
-  color: var(--color-black-19);
+  color: var(--color-gray1-footertext);
   letter-spacing: 0;
   font-weight: 200;
 }
@@ -356,27 +484,40 @@ main {
   flex-direction: column;
 }
 
-.bird svg, 
-.fish svg, 
-.tv svg {
-  fill: var(--color-black-19);
+.linkedin svg path {
+  fill: #997400;
+  transition: 0.3s;
 }
 
-.bird:hover svg, 
+.linkedin:hover svg path {
+  fill: var(--color-yellow1-main);
+  transition: 0.3s;
+}
+
+.bird svg path, 
+.fish svg, 
+.tv svg {
+  fill: var(--color-black4-text);
+  transition: 0.3s;
+}
+
+.bird:hover svg path, 
 .fish:hover svg, 
 .tv:hover svg {
-  fill: #000;
+  fill: var(--color-black5-socialmedia);
+  transition: 0.3s;
 }
 
 .sci ul li div img {
   position: relative;
   width: 237px;
-  left: -100px;
+  left: -103px;
   visibility: hidden;
 }
 
 .sci ul li div:hover img {
   visibility: visible;
+  transition: 0.3s;
 }
 
 
@@ -387,10 +528,10 @@ main {
 .overlay {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  background-color: #191919;
+  background-color: var(--color-black2-footerbg);
   overflow-x: hidden;
   visibility: hidden;
   transition: all 0.5s;
@@ -446,7 +587,7 @@ main {
   position: relative;
   width: 62.083vw;
   text-align: left;
-  background-color: var(--color-black-04);
+  background-color: var(--color-black2-footerbg);
   display: grid;
   grid-template-rows: 33.61% auto 33.52%;
   grid-template-columns: 23.74% auto;  
@@ -494,7 +635,7 @@ main {
   grid-column-end: 3;
 }
 
-.menu__contact-content p {
+.menu__contact-content p a {
   padding-bottom: 20px;
   font-family: var(--font-sfthin);
   font-size: 20px;

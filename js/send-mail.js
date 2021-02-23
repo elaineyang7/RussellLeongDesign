@@ -1,45 +1,20 @@
-$(document).ready(function() {
+function checkValidation() {
+  const name = document.forms["ContactForm"]["yourname"]; 
+  const email = document.forms["ContactForm"]["email"];
+  const message = document.forms["ContactForm"]["message"]; 
 
-  /* Contact */
-  /*https://formspree.io/*/
-  $('.submit').click(function (event) {
-    console.log('Click')
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
 
-    var companyName = $('.companyname').val()
-    var yourName = $('.yourname').val()
-    var email = $('.email').val()
-    var project = $('.project').val()
-    var statusElm = $('.status')
+  
+  
+  if (message.value == "") { 
+    window.alert("Please enter message."); 
+    message.focus(); 
+    return false; 
+  }
 
-    statusElm.empty()
-
-    if(companyName.length >= 2) {
-      statusElm.append("<div>companyName Valid</div>")
-    } else {
-      event.preventDefault()
-      statusElm.append("<div>companyName Not Valid</div>")
-    }
-
-    if(yourName.length >= 2) {
-      statusElm.append("<div>yourName Valid</div>")
-    } else {
-      event.preventDefault()
-      statusElm.append("<div>yourName Not Valid</div>")
-    }
-
-    if(email.length >= 5 && email.includes('@') && email.includes('.')) {
-      statusElm.append("<div>Email Valid</div>")
-    } else {
-      event.preventDefault()
-      statusElm.append("<div>Email Not Valid</div>")
-    }
-
-    if(project.length >= 2) {
-      statusElm.append("<div>project Valid</div>")
-    } else {
-      event.preventDefault()
-      statusElm.append("<div>project Not Valid</div>")
-    }
-
-  })
-});
+  return true; 
+}
