@@ -1,3 +1,5 @@
+<img src="https://github.com/elaineyang7/elaineyang7.github.io/blob/master/russell-web-intro/russell_ui.png" width="500">
+
 # Russell Leong Design
 Russell Leong Design is a design office based in the Bay Area that produces appropriate and meaningful brand identity graphics for a multitude of clients, small and large: high tech, and soft tech.
 
@@ -23,3 +25,4 @@ Project is created with:
 * grid 
 * AOS - Animate on scroll library
 * skrollr - Stand-alone parallax scrolling library
+
