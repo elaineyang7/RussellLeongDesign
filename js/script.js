@@ -6,62 +6,125 @@ function closeNav() {
   document.getElementById("overlay").classList.remove("active");
 }
 
-function changeDot() {
-  const scrollValue = $(window).scrollTop();
-  const heightSec2 = $('#section2').offset().top;
-  const heightSec3 = $('#section3').offset().top;
-  const heightSec4 = $('#section4').offset().top;
-  const heightSec5 = $('#section5').offset().top;
-  const heightSec6 = $('#section6').offset().top;
-  const heightSec7 = $('#section7').offset().top;
-  const heightSec8= $('#section8').offset().top;
+function adjustLineHeight() {
+  let rightNavLine;
 
-  if (scrollValue < heightSec2) {
-    $('aside li').not('.bar1').removeClass('active');
-    $('.bar1').addClass('active');
-  } else if (scrollValue < heightSec3) {
-    $('aside li').not('.bar2').removeClass('active');
-    $('.bar2').addClass('active');
-  } else if (scrollValue < heightSec4) {
-    $('aside li').not('.bar3').removeClass('active');
-    $('.bar3').addClass('active');
-  } else if (scrollValue < heightSec5) {
-    $('aside li').not('.bar4').removeClass('active');
-    $('.bar4').addClass('active');
-  } else if (scrollValue < heightSec6) {
-    $('aside li').not('.bar5').removeClass('active');
-    $('.bar5').addClass('active');
-  } else if (scrollValue < heightSec7) {
-    $('aside li').not('.bar6').removeClass('active');
-    $('.bar6').addClass('active');
-  } else if (scrollValue < heightSec8) {
-    $('aside li').not('.bar7').removeClass('active');
-    $('.bar7').addClass('active');
-  } else {
-    $('aside li').not('.bar8').removeClass('active');
-    $('.bar8').addClass('active');
+  if ($("#line-index")[0]){
+    rightNavLine = "line-index";
+  } else if ($("#line-about")[0]) {
+    rightNavLine = "line-about";
   }
-  
+
+  const documentHeight = $(document).height();
+  const windowtHeight = $(window).height();
+  const scrollHeight = documentHeight - windowtHeight;
+  let rulerHeight;
+
+  if ($(window).width() < 1680) {
+    rulerHeight = 345;
+  } else {
+    rulerHeight = 540;
+  }
+
+  const lineHeight = rulerHeight - scrollHeight / documentHeight * rulerHeight;
+
+  $('#' + rightNavLine).css({"height":"" + lineHeight + "px"});
 }
 
-$(window).on("scroll", changeDot)
+function moveLine() {
 
-$('aside li').on('click', function () {
-  const goToSection = '.s' + $(this).attr('id');
-  $('body, html').animate({
-      scrollTop: $(goToSection).offset().top + 1
-  })
-})
+  let rightNavLine;
 
-document.addEventListener('scroll', function (e) {
-  var top  = window.pageYOffset + window.innerHeight,
-      isVisibleMail = top > document.querySelector('#section6').offsetTop
-      /*isVisibleLocation = top > document.querySelector('#section2').offsetTop*/;
-       
-   if (isVisibleMail) {
-     document.getElementsByClassName('mail__content')[0].classList.add('mail__content--active');
-   }
-   /*if (isVisibleLocation) {
+  if ($("#line-index")[0]){
+    rightNavLine = "line-index";
+  } else if ($("#line-about")[0]) {
+    rightNavLine = "line-about";
+  }
+
+  const documentHeight = $(document).height();
+  const windowtHeight = $(window).height();
+  const scrollHeight = documentHeight - windowtHeight;
+  let rulerHeight;
+
+  if ($(window).width() < 1680) {
+    rulerHeight = 345;
+  } else {
+    rulerHeight = 540;
+  }
+
+  const lineHeight = rulerHeight - scrollHeight / documentHeight * rulerHeight;
+
+  const scrollValue = $(window).scrollTop();
+  const moveHeight = scrollValue / scrollHeight * (rulerHeight - lineHeight);
+
+  $('#' + rightNavLine).css({"height":"" + lineHeight + "px"});
+  $('#' + rightNavLine).css({"transform":"translateY(" + moveHeight + "px)"});
+
+  const curLineHeight = document.getElementById(rightNavLine).getBoundingClientRect().top;
+  const curSec2Height = document.getElementById("section2").getBoundingClientRect().top;
+  const curSec5Height = document.getElementById("section5").getBoundingClientRect().top;
+  const curSec5BotHeight = document.getElementById("section5").getBoundingClientRect().bottom;
+  const curSec6Height = document.getElementById("section6").getBoundingClientRect().top;
+  const curSec7Height = document.getElementById("section7").getBoundingClientRect().top;
+  const curSec7BotHeight = document.getElementById("section7").getBoundingClientRect().bottom;
+
+  if (rightNavLine === "line-index") {
+    if (curLineHeight >= curSec2Height && curLineHeight <= curSec6Height || curLineHeight >= curSec7Height) {
+      $('#' + rightNavLine).css({"background-color":"#FFC512"});
+    } else {
+      $('#' + rightNavLine).css({"background-color":"#2B2B2B"});
+    }
+  } else {
+    if (curLineHeight >= curSec5Height && curLineHeight <= curSec5BotHeight || curLineHeight >= curSec7BotHeight) {
+      $('#' + rightNavLine).css({"background-color":"#FFC512"});
+    } else {
+      $('#' + rightNavLine).css({"background-color":"#2B2B2B"});
+    }
+    const overlayImgHeight = curSec7BotHeight + (curSec7BotHeight - curSec7Height / 3.8);
+
+    if (scrollValue > overlayImgHeight) {
+      $('.hobby__overlay--img').addClass('overlay__img--active');
+    } else {
+      $('.hobby__overlay--img').removeClass('overlay__img--active');
+    }
+  }
+}
+
+function mailLocationTextAnimation() {
+  const top  = window.pageYOffset + window.innerHeight;
+  const isVisibleMail = top > document.querySelector('#section6').offsetTop;
+  const isVisibleLocation = top > document.querySelector('#section2').offsetTop;
+  
+  if (isVisibleMail) {
+    document.getElementsByClassName('mail__content')[0].classList.add('mail__content--active');
+  }
+  if (isVisibleLocation) {
     document.getElementsByClassName('location__content--text')[0].classList.add('location__content--active');
-  }*/
+  }
+}
+
+$(window).on("scroll", moveLine)
+
+$(window).on("scroll", mailLocationTextAnimation)
+
+$(document).ready(function(){
+  adjustLineHeight();
+  $("a").on('click', function(event) {
+    if (this.hash === "#section3" || this.hash === "#section4") {
+      var hashcode = window.location.hash;
+      $('html,body').animate({
+        scrollTop: $('div#' + hascode).offset().top
+      },'slow');
+    }
+    if (this.hash !== "") {
+      event.preventDefault();
+      var hash = this.hash;
+      console.log(hash);
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+      });
+    } 
+  });
 });

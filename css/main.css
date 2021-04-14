@@ -11,31 +11,43 @@
 @font-face {
   font-family: 'SFProText-Regular';
   src:  url('../fonts/SF-Pro-Text-Regular.otf') format('otf');
+  src:  url('../fonts/SF-Pro-Text-Regular.woff') format('woff');
+  src:  url('../fonts/SF-Pro-Text-Regular.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'SFProText-Thin';
   src:  url('../fonts/SF-Pro-Text-Thin.otf') format('otf');
+  src:  url('../fonts/SF-Pro-Text-Thin.woff') format('woff');
+  src:  url('../fonts/SF-Pro-Text-Thin.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'SFProText-Bold';
   src:  url('../fonts/SF-Pro-Text-Bold.otf') format('otf');
+  src:  url('../fonts/SF-Pro-Text-Bold.woff') format('woff');
+  src:  url('../fonts/SF-Pro-Text-Bold.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'SFProText-Medium';
   src:  url('../fonts/SF-Pro-Text-Medium.otf') format('otf');
+  src:  url('../fonts/SF-Pro-Text-Medium.woff') format('woff');
+  src:  url('../fonts/SF-Pro-Text-Medium.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'SFProText-Light';
   src:  url('../fonts/SF-Pro-Text-Light.otf') format('otf');
+  src:  url('../fonts/SF-Pro-Text-Light.woff') format('woff');
+  src:  url('../fonts/SF-Pro-Text-Light.woff2') format('woff2');
 }
 
 @font-face {
   font-family: 'SFProText-UltraLight';
   src:  url('../fonts/SF-Pro-Text-Ultralight.otf') format('otf');
+  src:  url('../fonts/SF-Pro-Text-Ultralight.woff') format('woff');
+  src:  url('../fonts/SF-Pro-Text-Ultralight.woff2') format('woff2');
 }
 
 :root {
@@ -89,8 +101,9 @@
 
   --size-russell-logo-gear: 68px;
   --size-overlay-btn-position: 48px;
-  --size-gear-logo: 63.7px;
-  --size-go-back: 54px;
+  --size-gear-logo: 60px;
+  --size-gear-logo-1440:48px;
+  --size-go-back: 48px;
 
 
   /**
@@ -147,3 +160,7 @@ li {
 }
 
 
+[data-aos^=fade][data-aos^=fade].aos-animate {
+    opacity: 1;
+    transform: translateZ(-100px)!important;
+}
