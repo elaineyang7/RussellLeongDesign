@@ -15,6 +15,21 @@ The original website is a bit old and the structure is not so good. After our UI
 - Some content is not present clearly
 - Inconvenient to contact the company through the website
 
+## My role
+I was responsible for the structure of web pages and their implementation. Developed features to enhance the user experience. Optimized web pages for maximum speed and scalability. I worked closely with UI/UX Designer for responsive web design using CSS grid system and ensure the technical feasibility and all elements of web creation are consistent. Worked on rendering the form in the browser and validate input to providing an excellent user experience.
+
+## Features
+### Text animation
+Created a parallax scrolling effect, zoom in to reveal a background image.
+### Horizontal scrolling and mouse draggable
+Users can browse all works horizontally on the current page just by scrolling down or drag the images.
+### Navigation System
+Improved the information architecture and navigation system. Added fixed left navigation bar and top menu button
+### Contact Form Validation
+UI/UX Designer added Contact Us section, users can leave messages throught the web pages rather than jump to thier email.
+
+Worked on rendering the form in the browser and validate input to providing an excellent user experience. Validation messages are shown immediately after the user types in data to form fields, encourages the user to take immediate action.
+
 ## Technologies
 Project is created with:
 * HTML5
